@@ -17,7 +17,7 @@ import React, { useState } from "react";
 import { Gender, Nationality, User } from "../types/user";
 import getUsers from "../utilities/utilities";
 
-const natinalities: Nationality[] = [
+const nationalities: Nationality[] = [
   "AU",
   "BR",
   "CH",
@@ -115,7 +115,7 @@ export default function UserFilter({ setUsers }: Props) {
                 Natinalities
               </Typography>
               <List className={classes.list}>
-                {natinalities.map((value) => (
+                {nationalities.map((value) => (
                   <ListItem
                     component="button"
                     button
