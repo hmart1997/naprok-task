@@ -1,0 +1,62 @@
+{
+  "parser": "@typescript-eslint/parser",
+  "extends": [
+    "airbnb",
+    "prettier"
+  ],
+  "plugins": [
+    "@typescript-eslint",
+    "prettier"
+  ],
+  "env": {
+    "browser": true
+  },
+  "settings": {
+    "import/parsers": {
+        "@typescript-eslint/parser": [".ts",".tsx"]
+    },
+    "import/resolver": {
+        "node": {
+            "extensions": [".js",".jsx",".ts",".tsx"]
+        }
+    }
+  },
+  "globals": {
+    "JSX": "readonly"
+  },
+  "rules": {
+    "no-unused-vars": "off",
+    "no-useless-constructor": "off",
+    "no-redeclare": "off",
+    "no-shadow": "off",
+
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-useless-constructor": "error",
+    "@typescript-eslint/no-redeclare": "error",
+    "@typescript-eslint/no-shadow": "error",
+
+    "import/extensions": ["error", "ignorePackages", {
+        "js": "never",
+        "mjs": "never",
+        "jsx": "never",
+        "ts": "never",
+        "tsx": "never"
+    }],
+    "react/jsx-filename-extension": ["error", {
+        "extensions": [".jsx", ".tsx"]
+    }],
+    
+    "react/function-component-definition": [
+      2,
+      {
+        "namedComponents": "function-declaration"
+      }
+    ],
+
+    "prettier/prettier": "error",
+
+    "no-plusplus": "off",
+    "no-use-before-define": "off",
+    "no-underscore-dangle": ["error", { "allow": ["_id"] }]
+  }
+}
