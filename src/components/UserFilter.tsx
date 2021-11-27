@@ -73,8 +73,8 @@ export default function UserFilter({ setUsers }: Props) {
     localNatinalities || [],
   );
 
-  const handleListOnClikt = (value: Nationality) => {
-    if (!checkedNatinalities.some((current) => current === value)) {
+  const handleListOnClicked = (value: Nationality) => {
+    if (!checkedNatinalities.includes(value)) {
       setCheckedNatinalities((prev) => [...prev, value]);
     } else {
       setCheckedNatinalities((prev) => prev.filter((current) => current !== value));
@@ -120,7 +120,7 @@ export default function UserFilter({ setUsers }: Props) {
                     component="button"
                     button
                     key={value}
-                    onClick={() => handleListOnClikt(value)}
+                    onClick={() => handleListOnClicked(value)}
                   >
                     <ListItemIcon>
                       <Checkbox
