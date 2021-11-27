@@ -1,5 +1,5 @@
 import queryString from "query-string";
-import { User } from "../types/user";
+import { Gender, Nationality, User } from "../types/user";
 
 const REQUESTED_USERS = 15;
 
@@ -10,8 +10,15 @@ const REQUESTED_FIELDS = {
 
 const url = new URL(`https://randomuser.me/api/`);
 
-export default async function getUsers(): Promise<User[]> {
-  url.search = new URLSearchParams(queryString.stringify(REQUESTED_FIELDS)).toString();
+export default async function getUsers(options?: {
+  gender?: Gender;
+  natinalities?: Nationality[];
+}): Promise<User[]> {
+  const { gender, natinalities } = options || {};
+
+  url.search = new URLSearchParams(
+    queryString.stringify({ ...REQUESTED_FIELDS, gender, nat: natinalities?.toString() }),
+  ).toString();
   const users: User[] = (
     await (
       await fetch(url.toString(), {

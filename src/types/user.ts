@@ -17,8 +17,10 @@ export type Nationality =
   | "TR"
   | "US";
 
+export type Gender = "male" | "female";
+
 export type User = {
-  gender: "male" | "female";
+  gender: Gender;
   name: {
     title: string;
     first: string;

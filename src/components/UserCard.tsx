@@ -40,6 +40,7 @@ export default function UserCard({ user }: Props) {
       <Typography variant="body1">{user.gender}</Typography>
       <Typography variant="body1">{user.email}</Typography>
       <Typography variant="body1">{user.dob.date.toString().split("T")[0]}</Typography>
+      <Typography variant="body1">{user.nat}</Typography>
     </Grid>
   );
 }
